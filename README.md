@@ -111,8 +111,8 @@ Classe usada para Listar, Registrar, Verificar e Revogar permissões à entidade
     $user->listEntityAccess('App\Empresa');
 
     /**
-     * Retorno: true ou false
-     */
+     * Retorno: array
+    */
 ```
 * **Verifica a Permissão do Usuário à uma Entidade**
 ```php
