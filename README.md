@@ -17,7 +17,7 @@ Biblioteca para implementação de controle de acesso por entidades em aplicaç�
 ```php     
     'providers' => [
         ...
-        Doc88\Doc88\LaravelEntityPermission\LaravelEntityPermissionServiceProvider::class,
+        Doc88\LaravelEntityPermission\LaravelEntityPermissionServiceProvider::class,
     ]
 ```
 
