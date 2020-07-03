@@ -101,8 +101,6 @@ Classe usada para Listar, Registrar, Verificar e Revogar permissões à entidade
 * **Listar Permissões do Usuário**
 ```php
     $user = User::find(1);
-    // ou
-    $user = auth()->user();
     
     // Entidades as quais o usuário possui acesso
     $user->listEntityAccess();
@@ -118,8 +116,6 @@ Classe usada para Listar, Registrar, Verificar e Revogar permissões à entidade
 ```php
 
     $user = User::find(1);
-    // ou
-    $user = auth()->user();
 
     // A entidade que deseja acessar
     $empresa = Empresa::find(1);
@@ -135,8 +131,6 @@ Classe usada para Listar, Registrar, Verificar e Revogar permissões à entidade
 * **Registra permissão à uma Entidade para o Usuário**
 ```php
     $user = User::find(1);
-    // ou
-    $user = auth()->user();
 
     // A entidade que deseja acessar
     $empresa = Empresa::find(1);
@@ -152,8 +146,6 @@ Classe usada para Listar, Registrar, Verificar e Revogar permissões à entidade
 * **Revoga permissão à uma Entidade do Usuário**
 ```php    
     $user = User::find(1);
-    // ou
-    $user = auth()->user();
 
     // A entidade que deseja acessar
     $empresa = Empresa::find(1);
