@@ -1,5 +1,5 @@
 {
-    "name": "doc88/laravel-entity-permission",
+    "name": "doc88/flux-entity-permission",
     "description": "Biblioteca para implementação de controle de acesso por entidades em aplicações Laravel.",
     "type": "library",
     "license": "MIT",
@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": ">=7.2.0"
+        "php": ">= 7.2.0"
     },
     "autoload": {
         "psr-4": {
