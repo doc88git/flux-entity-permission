@@ -1,4 +1,4 @@
-# Laravel Entity Permission
+# Flux Entity Permission
 Biblioteca para implementação de controle de acesso por entidades em aplicações Laravel.
 
 # Requisitos
@@ -9,7 +9,7 @@ Biblioteca para implementação de controle de acesso por entidades em aplicaç�
 * Execute o comando abaixo na raiz do projeto para adicionar o pacote à aplicação Laravel:
 
 ```php 
-    composer require doc88/laravel-entity-permission
+    composer require doc88/flux-entity-permission
 ```
 
 * Na lista de *providers* no arquivo *config/app.php* adicione:
