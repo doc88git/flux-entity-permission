@@ -1,8 +1,8 @@
 <?php
 
-namespace Doc88\LaravelEntityPermission;
+namespace Doc88\FluxEntityPermission;
 
-use Doc88\LaravelEntityPermission\Services\EntityPermissionService;
+use Doc88\FluxEntityPermission\Services\EntityPermissionService;
 
 class EntityPermission {
 

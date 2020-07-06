@@ -1,10 +1,10 @@
 <?php
 
-namespace Doc88\LaravelEntityPermission;
+namespace Doc88\FluxEntityPermission;
 
 use Illuminate\Support\ServiceProvider;
 
-class LaravelEntityPermissionServiceProvider extends ServiceProvider 
+class FluxEntityPermissionServiceProvider extends ServiceProvider 
 {
     public function boot()
     {

@@ -9,7 +9,7 @@ Biblioteca para implementação de controle de acesso por entidades em aplicaç�
 * Execute o comando abaixo na raiz do projeto para adicionar o pacote à aplicação Laravel:
 
 ```php 
-    composer require doc88/laravel-entity-permission
+    composer require doc88/flux-entity-permission
 ```
 
 * Na lista de *providers* no arquivo *config/app.php* adicione:
@@ -17,7 +17,7 @@ Biblioteca para implementação de controle de acesso por entidades em aplicaç�
 ```php     
     'providers' => [
         ...
-        Doc88\LaravelEntityPermission\LaravelEntityPermissionServiceProvider::class,
+        Doc88\FluxEntityPermission\FluxEntityPermissionServiceProvider::class,
     ]
 ```
 
@@ -36,7 +36,7 @@ Biblioteca para implementação de controle de acesso por entidades em aplicaç�
 * Na sua Model de Usuários adicione as seguintes linhas:
 
 ```php     
-    use Doc88\LaravelEntityPermission\Traits\HasEntityPermissions;
+    use Doc88\FluxEntityPermission\Traits\HasEntityPermissions;
 
     class User {
         use HasEntityPermissions;
@@ -44,7 +44,7 @@ Biblioteca para implementação de controle de acesso por entidades em aplicaç�
 ```
 # Utilização
 
-## Classe Doc88\LaravelEntityPermission\EntityPermission
+## Classe Doc88\FluxEntityPermission\EntityPermission
 Classe usada para Listar, Registrar, Verificar e Revogar permissões à entidades.
 
 * **Listar Entidades das Permissões de um Usuário**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Doc88\LaravelEntityPermission\Models;
+namespace Doc88\FluxEntityPermission\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
