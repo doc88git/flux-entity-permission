@@ -27,6 +27,12 @@ Biblioteca para implementação de controle de acesso por entidades em aplicaç�
     php artisan vendor:publish
 ```
 
+* Rode as migrations
+
+```php 
+    php artisan migrate
+```
+
 * Na sua Model de Usuários adicione as seguintes linhas:
 
 ```php     
