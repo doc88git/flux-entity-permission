@@ -17,10 +17,11 @@ class EntityPermissionService {
 
     public function checkIfHasAccess()
     {
-        return EntityUser::whereEntityId($this->entity->id)
-            ->whereEntity(get_class($this->entity))
-            ->whereUserId($this->user->id)
-            ->exists();
+        return $this->user->admin ? $this->user->admin :
+            EntityUser::whereEntityId($this->entity->id)
+                ->whereEntity(get_class($this->entity))
+                ->whereUserId($this->user->id)
+                ->exists();
     }
 
     public function listEntitiesHasAccess()
