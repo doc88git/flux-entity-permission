@@ -41,13 +41,23 @@ Biblioteca para implementação de controle de acesso por entidades em aplicaç�
 ## Classe Doc88\LaravelEntityPermission\EntityPermission
 Classe usada para Listar, Registrar, Verificar e Revogar permissões à entidades.
 
-* **Listar Permissões de um Usuário**
+* **Listar Entidades das Permissões de um Usuário**
 ```php
     // Entidades as quais o usuário possui acesso
     EntityPermission::list($user);
 
     // Especificando qual é a entidade que deseja listar
     EntityPermission::list($user, 'App\Empresa');
+
+    /**
+     * Retorno: array
+    */
+```
+
+* **Listar IDs das Entidades das Permissões de um Usuário**
+```php
+    // Ids das entidades as quais o usuário possui acesso
+    EntityPermission::idList($user, 'App\Empresa');
 
     /**
      * Retorno: array

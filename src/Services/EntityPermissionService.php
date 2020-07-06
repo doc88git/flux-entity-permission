@@ -46,6 +46,16 @@ class EntityPermissionService {
         return $entities;
     }
 
+    public function listIdsEntitiesHasAccess()
+    {
+        EntityUser::whereUserId($this->user->id)
+        ->whereEntity($this->entity)
+        ->get()
+        ->keyBy('entity_id')
+        ->keys()
+        ->toArray();
+    }
+
     public function registerNewEntityAccess()
     {
         return EntityUser::firstOrNew([

@@ -15,6 +15,14 @@ class EntityPermission {
     }
 
     /**
+     * Lista os ids das entidades as quais um usuário possui permissão
+     */
+    public static function idList($user, $entity)
+    {   
+        return (new EntityPermissionService($entity, $user))->listIdsEntitiesHasAccess();
+    }
+
+    /**
      * Verifica se o usuário possui permissão para tal entidade
      */
     public static function has($user, $entity)
