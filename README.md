@@ -1,4 +1,4 @@
-# Laravel Entity Permission
+# Flux Entity Permission
 Biblioteca para implementação de controle de acesso por entidades em aplicações Laravel.
 
 # Requisitos
