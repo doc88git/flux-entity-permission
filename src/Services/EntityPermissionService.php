@@ -48,7 +48,7 @@ class EntityPermissionService {
 
     public function listIdsEntitiesHasAccess()
     {
-        EntityUser::whereUserId($this->user->id)
+        return EntityUser::whereUserId($this->user->id)
         ->whereEntity($this->entity)
         ->get()
         ->keyBy('entity_id')
