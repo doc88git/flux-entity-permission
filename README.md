@@ -1,18 +1,18 @@
 # Flux Entity Permission
-Biblioteca para implementação de controle de acesso por entidades em aplicações Laravel.
+Library for implementing entities access control in Laravel applications.
 
-# Requisitos
+# Requirements
 * Laravel >= 6.0
 
-# Instalação
+# Installation
 
-* Execute o comando abaixo na raiz do projeto para adicionar o pacote à aplicação Laravel:
+* Run the command below at the project root to add the package to the Laravel application:
 
 ```php 
     composer require doc88/flux-entity-permission
 ```
 
-* Na lista de *providers* no arquivo *config/app.php* adicione:
+* In the *providers* list in the *config/app.php* file add:
 
 ```php     
     'providers' => [
@@ -21,19 +21,19 @@ Biblioteca para implementação de controle de acesso por entidades em aplicaç�
     ]
 ```
 
-* Execute o comando abaixo na raiz de seu projeto para publicar o novo provider
+* Run the command below at the root of your project to publish the new provider:
 
 ```php 
     php artisan vendor:publish
 ```
 
-* Rode as migrations
+* Run migrations
 
 ```php 
     php artisan migrate
 ```
 
-* Na sua Model de Usuários adicione as seguintes linhas:
+* In your User Model add the following lines:
 
 ```php     
     use Doc88\FluxEntityPermission\Traits\HasEntityPermissions;
@@ -42,135 +42,134 @@ Biblioteca para implementação de controle de acesso por entidades em aplicaç�
         use HasEntityPermissions;
     }
 ```
-# Utilização
+# Usage
 
-## Classe Doc88\FluxEntityPermission\EntityPermission
-Classe usada para Listar, Registrar, Verificar e Revogar permissões à entidades.
+## Doc88\FluxEntityPermission\EntityPermission Class
+Class used to List, Register, Verify and Revoke permissions to entities.
 
-* **Listar Entidades das Permissões de um Usuário**
+* **List Entities from a User’s Permissions**
 ```php
-    // Entidades as quais o usuário possui acesso
+    // Entities which the user has access to
     EntityPermission::list($user);
 
-    // Especificando qual é a entidade que deseja listar
-    EntityPermission::list($user, 'App\Empresa');
+    // Specifying which entity you want to list
+    EntityPermission::list($user, 'App\Company');
 
     /**
-     * Retorno: array
+     * Return: array
     */
 ```
 
-* **Listar IDs das Entidades das Permissões de um Usuário**
+* **List Entities IDs from a User’s Permissions**
 ```php
-    // Ids das entidades as quais o usuário possui acesso
-    EntityPermission::idList($user, 'App\Empresa');
+    // Ids of entities which the user has access to
+    EntityPermission::idList($user, 'App\Company');
 
     /**
-     * Retorno: array
+     * Return: array
     */
 ```
 
-* **Verifica a Permissão de um Usuário à uma Entidade**
+* **Checks a User’s Permission to an Entity**
 ```php
-    // A entidade que deseja acessar
-    $empresa = Empresa::find(1);
+    // The entity you want to access
+    $company = Company::find(1);
     
-    // Verificando se o usuário possui acesso a entidade
-    EntityPermission::has($user, $empresa);
+    // Checking if the user has access to the entity
+    EntityPermission::has($user, $company);
     
     /**
-    * Retorno: true ou false
+    * Return: true or false
     */
     
 ```
 
-* **Registra permissão à uma Entidade para um Usuário**
+* **Records permission to an Entity**
 ```php
-    // A entidade que deseja acessar
-    $empresa = Empresa::find(1);
+    // The entity you want to access
+    $company = Company::find(1);
     
-    // Concede permissão à entidade para o Usuário
-    EntityPermission::register($user, $empresa);
+    // Grants permission to the entity for the User
+    EntityPermission::register($user, $company);
     
     /**
-    * Retorno: true ou false
+    * Return: true or false
     */
 ```
 
-* **Revoga permissão à uma Entidade de um Usuário**
+* **Revokes permission to a Entity**
 ```php
-    // A entidade que deseja acessar
-    $empresa = Empresa::find(1);
+    // The entity you want to access
+    $company = Company::find(1);
     
-    // Revoga permissão à entidade do Usuário
-    EntityPermission::revoke($user, $empresa);
+    // Revokes permission to the Entity
+    EntityPermission::revoke($user, $company);
 
     /**
-    * Retorno: true ou false
+    * Return: true or false
     */
     
 ```
 
-## Utilizando a Model do Usuário
-É possível Listar, Registrar, Verificar e Revogar permissões à entidades usando a classe do Usuário.
+## Using the User Model
+It is possible to List, Register, Verify and Revoke permissions to entities using the User class.
 
-* **Listar Permissões do Usuário**
+* **List User Permissions**
 ```php
     $user = User::find(1);
     
-    // Entidades as quais o usuário possui acesso
+    // Entities which the user has access to
     $user->listEntityAccess();
 
-    // Especificando qual é a entidade que deseja listar
-    $user->listEntityAccess('App\Empresa');
+    // Specifying which entity you want to list
+    $user->listEntityAccess('App\Company');
 
     /**
-     * Retorno: array
+     * Return: array
     */
 ```
-* **Verifica a Permissão do Usuário à uma Entidade**
-```php
-
-    $user = User::find(1);
-
-    // A entidade que deseja acessar
-    $empresa = Empresa::find(1);
-    
-    // Verificando se o usuário possui acesso a entidade
-    $user->hasEntityAccess($empresa);
-    
-    /**
-    * Retorno: true ou false
-    */
-    
-```
-* **Registra permissão à uma Entidade para o Usuário**
+* **Checks User Permission to an Entity**
 ```php
     $user = User::find(1);
 
-    // A entidade que deseja acessar
-    $empresa = Empresa::find(1);
+    // The entity you want to access
+    $company = Company::find(1);
     
-    // Concede permissão à entidade para o Usuário
-    $user->registerEntityAccess($empresa);
+    // Checking if the user has access to the entity
+    $user->hasEntityAccess($company);
     
     /**
-    * Retorno: true ou false
+    * Return: true or false
+    */
+    
+```
+* **Records permission to an Entity**
+```php
+    $user = User::find(1);
+
+    // The entity you want to access
+    $company = Company::find(1);
+    
+    // Grants permission to the entity for the User
+    $user->registerEntityAccess($company);
+    
+    /**
+    * Return: true or false
     */
 ```
 
-* **Revoga permissão à uma Entidade do Usuário**
+* **Revokes permission to an Entity**
 ```php    
     $user = User::find(1);
 
-    // A entidade que deseja acessar
-    $empresa = Empresa::find(1);
+    // The entity you want to access
+    $company = Company::find(1);
     
-    // Revoga permissão à entidade do Usuário
-    $user->revokeEntityAccess($empresa);
+    // Revokes permission to the entity
+    $user->revokeEntityAccess($company);
 
     /**
-    * Retorno: true ou false
+    * Return: true or false
     */
     
 ```
